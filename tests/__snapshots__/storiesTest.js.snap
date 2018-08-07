@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AlertMessage Custom Style 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#333",
+        "justifyContent": "center",
+        "marginVertical": 25,
+      },
+      Object {
+        "backgroundColor": "red",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#000",
+          "fontFamily": "Avenir-Book",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "marginHorizontal": 10,
+          "marginVertical": 10,
+          "textAlign": "center",
+        }
+      }
+    >
+      ALERT ALERT
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots AlertMessage Default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#333",
+        "justifyContent": "center",
+        "marginVertical": 25,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#000",
+          "fontFamily": "Avenir-Book",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "marginHorizontal": 10,
+          "marginVertical": 10,
+          "textAlign": "center",
+        }
+      }
+    >
+      ALERT ALERT
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots AlertMessage Hidden 1`] = `null`;
+
+exports[`Storyshots Buttons - DrawerButton Default 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "black",
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": undefined,
+          "fontFamily": "Avenir-Book",
+          "fontSize": 20,
+          "marginVertical": 10,
+        }
+      }
+    >
+      Drawer Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Buttons - FullButton Custom Style 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "borderBottomColor": "#ff6300",
+      "borderBottomWidth": 1,
+      "borderTopColor": "#ff4136",
+      "borderTopWidth": 1,
+      "marginVertical": 5,
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#fff",
+        "fontFamily": "Avenir-Black",
+        "fontSize": 14,
+        "margin": 18,
+        "textAlign": "center",
+      }
+    }
+  >
+    STYLE ME UP!
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Buttons - FullButton Default 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#ffd700",
+      "borderBottomColor": "#ff6300",
+      "borderBottomWidth": 1,
+      "borderTopColor": "#ff4136",
+      "borderTopWidth": 1,
+      "marginVertical": 5,
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#fff",
+        "fontFamily": "Avenir-Black",
+        "fontSize": 14,
+        "margin": 18,
+        "textAlign": "center",
+      }
+    }
+  >
+    A SIMPLE BUTTON
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Buttons - RoundedButton Default 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "borderRadius": 5,
+      "height": 45,
+      "justifyContent": "center",
+      "marginHorizontal": 25,
+      "marginVertical": 10,
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#357edd",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "marginVertical": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    A SIMPLE ROUNDED BUTTON
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Buttons - RoundedButton Text as children 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "borderRadius": 5,
+      "height": 45,
+      "justifyContent": "center",
+      "marginHorizontal": 25,
+      "marginVertical": 10,
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#357edd",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "marginVertical": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    HELLO FROM THE CHILDREN!
+  </Text>
+</View>
+`;
