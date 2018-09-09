@@ -17,9 +17,9 @@ export default class AlertMessage extends Component {
     if (this.props.show) {
       const { title } = this.props
       return (
-        <View style={[styles.container, this.props.style]}>
-          <View style={styles.contentContainer}>
-            <Text allowFontScaling={false} style={styles.message}>
+        <View style={[styles.alert__container, this.props.style]}>
+          <View style={styles.alert__contentContainer}>
+            <Text allowFontScaling={false} style={styles.alert__message}>
               {title && title.toUpperCase()}
             </Text>
           </View>

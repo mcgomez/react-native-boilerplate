@@ -1,17 +1,17 @@
 import { StyleSheet } from 'react-native'
-import { Metrics, ApplicationStyles } from '../../themes/'
+import { Metrics, ApplicationStyles } from '../../themes'
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
-  backButton: {
-    position: 'absolute',
-    paddingTop: 60,
+  register__backButton: {
     paddingHorizontal: 10,
+    paddingTop: 60,
+    position: 'absolute',
     zIndex: 10,
   },
-  logo: {
-    marginTop: 40,
+  register__logo: {
     height: Metrics.images.medium,
+    marginTop: 40,
     resizeMode: 'contain',
   },
 })

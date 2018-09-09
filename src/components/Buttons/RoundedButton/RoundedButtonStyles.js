@@ -2,19 +2,19 @@ import { StyleSheet } from 'react-native'
 import { Fonts, Colors, Metrics } from '../../../themes/'
 
 export default StyleSheet.create({
-  button: {
-    height: 45,
+  roundedButton__button: {
+    backgroundColor: Colors.white,
     borderRadius: 5,
+    height: 45,
+    justifyContent: 'center',
     marginHorizontal: Metrics.section,
     marginVertical: Metrics.baseMargin,
-    backgroundColor: Colors.white,
-    justifyContent: 'center',
   },
-  buttonText: {
+  roundedButton__text: {
     color: Colors.blue,
-    textAlign: 'center',
-    fontWeight: 'bold',
     fontSize: Fonts.size.medium,
+    fontWeight: 'bold',
     marginVertical: Metrics.baseMargin,
+    textAlign: 'center',
   },
 })

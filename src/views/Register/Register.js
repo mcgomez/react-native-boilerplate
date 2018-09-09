@@ -35,13 +35,16 @@ class Register extends Component {
           resizeMode="stretch"
         />
 
-        <TouchableOpacity onPress={this.goBack} style={styles.backButton}>
+        <TouchableOpacity
+          onPress={this.goBack}
+          style={styles.register__backButton}
+        >
           <Icon name="arrow-left" size={25} color="white" />
         </TouchableOpacity>
 
         <ScrollView style={styles.container}>
           <View style={{ alignItems: 'center' }}>
-            <Image source={Images.logo} style={styles.logo} />
+            <Image source={Images.logo} style={styles.register__logo} />
           </View>
 
           <View style={styles.section}>
