@@ -3,7 +3,7 @@ import { getStorybookUI, configure } from '@storybook/react-native'
 
 // import stories
 configure(() => {
-  require('../src/components/Stories')
+  require('../src/components/Stories') // eslint-disable-line global-require
 }, module)
 
 // This assumes that storybook is running on the same host as your RN packager,

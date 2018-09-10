@@ -1,9 +1,9 @@
 export default {
-  showDevScreens: __DEV__,
+  showDevScreens: __DEV__, // eslint-disable-line no-undef
   useFixtures: false,
   ezLogin: false,
-  yellowBox: __DEV__,
-  reduxLogging: __DEV__,
-  includeExamples: __DEV__,
-  useReactotron: __DEV__,
+  yellowBox: __DEV__, // eslint-disable-line no-undef
+  reduxLogging: __DEV__, // eslint-disable-line no-undef
+  includeExamples: __DEV__, // eslint-disable-line no-undef
+  // useReactotron: __DEV__, // eslint-disable-line no-undef
 }

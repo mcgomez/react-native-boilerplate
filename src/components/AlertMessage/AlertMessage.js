@@ -4,20 +4,12 @@ import { View, Text } from 'react-native'
 import styles from './AlertMessageStyles'
 
 export default class AlertMessage extends Component {
-  static defaultProps = { show: true }
-
-  static propTypes = {
-    title: PropTypes.string,
-    style: PropTypes.object,
-    show: PropTypes.bool,
-  }
-
   render() {
-    let messageComponent = null
-    if (this.props.show) {
-      const { title } = this.props
+    const messageComponent = null
+    const { show, title, style } = this.props
+    if (show) {
       return (
-        <View style={[styles.alert__container, this.props.style]}>
+        <View style={[styles.alert__container, style]}>
           <View style={styles.alert__contentContainer}>
             <Text allowFontScaling={false} style={styles.alert__message}>
               {title && title.toUpperCase()}
@@ -29,4 +21,16 @@ export default class AlertMessage extends Component {
 
     return messageComponent
   }
+}
+
+AlertMessage.defaultProps = {
+  title: '',
+  style: null,
+  show: true,
+}
+
+AlertMessage.propTypes = {
+  title: PropTypes.string,
+  style: PropTypes.object,
+  show: PropTypes.bool,
 }

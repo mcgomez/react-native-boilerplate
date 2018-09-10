@@ -1,8 +1,8 @@
 import 'react-native'
 import React from 'react'
-import { RoundedButton } from '../../src/components'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
+import { RoundedButton } from '../../src/components'
 
 test('RoundedButton component renders correctly', () => {
   const tree = renderer
@@ -20,7 +20,9 @@ test('RoundedButton component with children renders correctly', () => {
 
 test('onPress', () => {
   let i = 0 // i guess i could have used sinon here too... less is more i guess
-  const onPress = () => i++
+  const onPress = () => {
+    i += 1
+  }
   const wrapperPress = shallow(<RoundedButton onPress={onPress} text="hi" />)
 
   expect(wrapperPress.prop('onPress')).toBe(onPress) // uses the right handler

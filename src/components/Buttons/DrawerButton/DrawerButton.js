@@ -4,18 +4,24 @@ import { Text, TouchableOpacity } from 'react-native'
 import styles from './DrawerButtonStyles'
 
 class DrawerButton extends Component {
-  static propTypes = {
-    text: PropTypes.string,
-    onPress: PropTypes.func,
-  }
-
   render() {
+    const { onPress, text } = this.props
     return (
-      <TouchableOpacity onPress={this.props.onPress}>
-        <Text style={styles.drawerButton__text}>{this.props.text}</Text>
+      <TouchableOpacity onPress={onPress}>
+        <Text style={styles.drawerButton__text}>{text}</Text>
       </TouchableOpacity>
     )
   }
+}
+
+DrawerButton.defaultProps = {
+  text: '',
+  onPress: null,
+}
+
+DrawerButton.propTypes = {
+  text: PropTypes.string,
+  onPress: PropTypes.func,
 }
 
 export default DrawerButton

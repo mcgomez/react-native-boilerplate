@@ -9,24 +9,23 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { Images } from '../../themes'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { NavigationActions } from 'react-navigation'
+import { Images } from '../../themes'
 
 // Styles
 import styles from './RegisterStyles'
 
 class Register extends Component {
-  static propTypes = {
-    navigation: PropTypes.object,
-  }
-
-  goBack = () => {
+  goBack() {
+    const { navigation } = this.props
     const backAction = NavigationActions.back()
-    this.props.navigation.dispatch(backAction)
+
+    navigation.dispatch(backAction)
   }
 
   render() {
+    const { navigation } = this.props
     return (
       <KeyboardAvoidingView style={styles.mainContainer}>
         <Image
@@ -36,7 +35,7 @@ class Register extends Component {
         />
 
         <TouchableOpacity
-          onPress={this.goBack}
+          onPress={() => this.goBack}
           style={styles.register__backButton}
         >
           <Icon name="arrow-left" size={25} color="white" />
@@ -50,9 +49,7 @@ class Register extends Component {
           <View style={styles.section}>
             <Text style={[styles.titleText, styles.sectionText]}>Sign Up</Text>
 
-            <TouchableOpacity
-              onPress={() => this.props.navigation.replace('SignIn')}
-            >
+            <TouchableOpacity onPress={() => navigation.replace('SignIn')}>
               <Text style={styles.sectionText}>
                 Already have an account? Sign in.
               </Text>
@@ -64,13 +61,13 @@ class Register extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {}
+Register.propTypes = {
+  navigation: PropTypes.object.isRequired,
 }
 
-const mapDispatchToProps = dispatch => {
-  return {}
-}
+const mapStateToProps = () => ({})
+
+const mapDispatchToProps = () => ({})
 
 export default connect(
   mapStateToProps,

@@ -6,9 +6,6 @@ import PropTypes from 'prop-types'
 import { Images } from '../../themes'
 import { RoundedButton } from '../../components'
 
-// TMP
-import DevscreensButton from '../../../ignite/DevScreens/DevscreensButton'
-
 // Styles
 import styles from './LaunchScreenStyles'
 
@@ -17,12 +14,9 @@ import Register from '../Register/Register'
 import SignIn from '../SignIn/SignIn'
 
 class LaunchScreen extends Component {
-  static propTypes = {
-    navigation: PropTypes.object,
-  }
-
-  openRegister = () => {
-    this.props.navigation.navigate('Register')
+  openRegister() {
+    const { navigation } = this.props
+    navigation.navigate('Register')
   }
 
   render() {
@@ -39,13 +33,18 @@ class LaunchScreen extends Component {
           </View>
 
           <View style={styles.section}>
-            <RoundedButton onPress={this.openRegister}>Sign Up</RoundedButton>
-            <DevscreensButton />
+            <RoundedButton onPress={() => this.openRegister}>
+              Sign Up
+            </RoundedButton>
           </View>
         </ScrollView>
       </View>
     )
   }
+}
+
+LaunchScreen.propTypes = {
+  navigation: PropTypes.object.isRequired,
 }
 
 export default createStackNavigator(

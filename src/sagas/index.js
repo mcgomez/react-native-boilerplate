@@ -11,7 +11,7 @@ import { GithubTypes } from '../redux/GithubRedux'
 /* ------------- Sagas ------------- */
 
 import { startup } from './StartupSagas'
-import { getUserAvatar } from './GithubSagas'
+import getUserAvatar from './GithubSagas'
 
 /* ------------- API ------------- */
 

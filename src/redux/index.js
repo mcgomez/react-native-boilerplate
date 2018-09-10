@@ -1,13 +1,16 @@
 import { combineReducers } from 'redux'
 import { persistReducer } from 'redux-persist'
 import configureStore from './CreateStore'
-import rootSaga from '../sagas/'
+import rootSaga from '../sagas'
 import ReduxPersist from '../config/ReduxPersist'
+
+import { reducer as GithubReducer } from './GithubRedux'
+import { reducer as SearchReducer } from './SearchRedux'
 
 /* ------------- Assemble The Reducers ------------- */
 export const reducers = combineReducers({
-  github: require('./GithubRedux').reducer,
-  search: require('./SearchRedux').reducer,
+  github: GithubReducer,
+  search: SearchReducer,
 })
 
 export default () => {
@@ -18,17 +21,16 @@ export default () => {
     finalReducers = persistReducer(persistConfig, reducers)
   }
 
-  let { store, sagasManager, sagaMiddleware } = configureStore(
-    finalReducers,
-    rootSaga,
-  )
+  const { store, sagaMiddleware } = configureStore(finalReducers, rootSaga)
+
+  let { sagasManager } = configureStore(finalReducers, rootSaga)
 
   if (module.hot) {
     module.hot.accept(() => {
-      const nextRootReducer = require('./').reducers
+      const nextRootReducer = require('./').reducers // eslint-disable-line global-require, import/no-self-import
       store.replaceReducer(nextRootReducer)
 
-      const newYieldedSagas = require('../sagas').default
+      const newYieldedSagas = require('../sagas').default // eslint-disable-line global-require
       sagasManager.cancel()
       sagasManager.done.then(() => {
         sagasManager = sagaMiddleware.run(newYieldedSagas)

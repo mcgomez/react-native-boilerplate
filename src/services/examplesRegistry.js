@@ -3,8 +3,9 @@ import { Text, View } from 'react-native'
 import R from 'ramda'
 import { ApplicationStyles } from '../themes'
 import DebugConfig from '../config/DebugConfig'
-let globalComponentExamplesRegistry = []
-let globalPluginExamplesRegistry = []
+
+const globalComponentExamplesRegistry = []
+const globalPluginExamplesRegistry = []
 
 export const addComponentExample = (title, usage = () => {}) => {
   if (DebugConfig.includeExamples)
@@ -16,8 +17,7 @@ export const addPluginExample = (title, usage = () => {}) => {
     globalPluginExamplesRegistry.push({ title, usage })
 } // eslint-disable-line
 
-const renderComponentExample = example => {
-  return (
+const renderComponentExample = example => (
     <View key={example.title}>
       <View style={ApplicationStyles.darkLabelContainer}>
         <Text style={ApplicationStyles.darkLabel}>{example.title}</Text>
@@ -25,10 +25,8 @@ const renderComponentExample = example => {
       {example.usage.call()}
     </View>
   )
-}
 
-const renderPluginExample = example => {
-  return (
+const renderPluginExample = example => (
     <View key={example.title}>
       <View style={ApplicationStyles.darkLabelContainer}>
         <Text style={ApplicationStyles.darkLabel}>{example.title}</Text>
@@ -36,7 +34,6 @@ const renderPluginExample = example => {
       {example.usage.call()}
     </View>
   )
-}
 
 export const renderComponentExamples = () =>
   R.map(renderComponentExample, globalComponentExamplesRegistry)

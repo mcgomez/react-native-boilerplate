@@ -9,24 +9,23 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { Images } from '../../themes'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { NavigationActions } from 'react-navigation'
+import { Images } from '../../themes'
 
 // Styles
 import styles from './SignInStyles'
 
 class SignInView extends Component {
-  static propTypes = {
-    navigation: PropTypes.object,
-  }
-
-  goBack = () => {
+  goBack() {
+    const { navigation } = this.props
     const backAction = NavigationActions.back()
-    this.props.navigation.dispatch(backAction)
+
+    navigation.dispatch(backAction)
   }
 
   render() {
+    const { navigation } = this.props
     return (
       <KeyboardAvoidingView style={styles.mainContainer}>
         <Image
@@ -36,7 +35,7 @@ class SignInView extends Component {
         />
 
         <TouchableOpacity
-          onPress={this.goBack}
+          onPress={() => this.goBack}
           style={styles.signIn__backButton}
         >
           <Icon name="arrow-left" size={25} color="white" />
@@ -50,11 +49,9 @@ class SignInView extends Component {
           <View style={styles.section}>
             <Text style={[styles.titleText, styles.sectionText]}>Sign In</Text>
 
-            <TouchableOpacity
-              onPress={() => this.props.navigation.replace('Register')}
-            >
+            <TouchableOpacity onPress={() => navigation.replace('Register')}>
               <Text style={styles.sectionText}>
-                Don't have an account? Register.
+                Don&apos;t have an account? Register.
               </Text>
             </TouchableOpacity>
           </View>
@@ -64,13 +61,13 @@ class SignInView extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {}
+SignInView.propTypes = {
+  navigation: PropTypes.object.isRequired,
 }
 
-const mapDispatchToProps = dispatch => {
-  return {}
-}
+const mapStateToProps = () => ({})
+
+const mapDispatchToProps = () => ({})
 
 export default connect(
   mapStateToProps,

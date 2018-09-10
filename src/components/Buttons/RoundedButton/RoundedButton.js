@@ -4,25 +4,30 @@ import { TouchableOpacity, Text } from 'react-native'
 import styles from './RoundedButtonStyles'
 
 export default class RoundedButton extends Component {
-  static propTypes = {
-    onPress: PropTypes.func,
-    text: PropTypes.string,
-    children: PropTypes.string,
-  }
-
   getText() {
-    const buttonText = this.props.text || this.props.children || ''
+    const { text, children } = this.props
+    const buttonText = text || children || ''
     return buttonText.toUpperCase()
   }
 
   render() {
+    const { onPress } = this.props
     return (
-      <TouchableOpacity
-        style={styles.roundedButton__button}
-        onPress={this.props.onPress}
-      >
+      <TouchableOpacity style={styles.roundedButton__button} onPress={onPress}>
         <Text style={styles.roundedButton__text}>{this.getText()}</Text>
       </TouchableOpacity>
     )
   }
+}
+
+RoundedButton.defaultProps = {
+  onPress: null,
+  text: '',
+  children: '',
+}
+
+RoundedButton.propTypes = {
+  onPress: PropTypes.func,
+  text: PropTypes.string,
+  children: PropTypes.string,
 }

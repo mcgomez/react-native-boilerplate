@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { TouchableOpacity, Text } from 'react-native'
-import styles from './FullButtonStyles'
+import style from './FullButtonStyles'
 
 export default class FullButton extends Component {
-  static propTypes = {
-    text: PropTypes.string,
-    onPress: PropTypes.func,
-    styles: PropTypes.object,
-  }
-
   render() {
+    const { styles, onPress, text } = this.props
     return (
       <TouchableOpacity
-        style={[styles.fullButton__button, this.props.styles]}
-        onPress={this.props.onPress}
+        style={[style.fullButton__button, styles]}
+        onPress={onPress}
       >
         <Text style={styles.fullButton__text}>
-          {this.props.text && this.props.text.toUpperCase()}
+          {text && text.toUpperCase()}
         </Text>
       </TouchableOpacity>
     )
   }
+}
+
+FullButton.defaultProps = {
+  text: '',
+  onPress: null,
+  styles: null,
+}
+
+FullButton.propTypes = {
+  text: PropTypes.string,
+  onPress: PropTypes.func,
+  styles: PropTypes.object,
 }

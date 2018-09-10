@@ -1,4 +1,5 @@
 // leave off @2x/@3x
+/* eslint-disable  global-require, import/no-unresolved */
 const images = {
   api: require('../images/icons/icon-api-testing.png'),
   backButton: require('../images/icons/back-button.png'),
@@ -21,5 +22,5 @@ const images = {
   tileBg: require('../images/tile_bg.png'),
   usageExamples: require('../images/icons/icon-usage-examples.png'),
 }
-
+/* eslint-enable */
 export default images
