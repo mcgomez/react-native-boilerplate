@@ -2,19 +2,19 @@ import { StyleSheet } from 'react-native'
 import { Fonts, Colors } from '../../../themes'
 
 export default StyleSheet.create({
-  button: {
-    marginVertical: 5,
-    borderTopColor: Colors.red,
-    borderBottomColor: Colors.orange,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
+  fullButton__button: {
     backgroundColor: Colors.yellow,
+    borderBottomColor: Colors.orange,
+    borderBottomWidth: 1,
+    borderTopColor: Colors.red,
+    borderTopWidth: 1,
+    marginVertical: 5,
   },
-  buttonText: {
+  fullButton__text: {
+    color: Colors.white,
+    fontFamily: Fonts.type.bold,
+    fontSize: Fonts.size.medium,
     margin: 18,
     textAlign: 'center',
-    color: Colors.white,
-    fontSize: Fonts.size.medium,
-    fontFamily: Fonts.type.bold,
   },
 })

@@ -3,16 +3,16 @@ import { Metrics, ApplicationStyles } from '../../themes'
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
-  container: {
+  launchScreen__container: {
     paddingBottom: Metrics.baseMargin,
   },
-  logo: {
-    marginTop: Metrics.doubleSection,
+  launchScreen__logo: {
     height: Metrics.images.logo,
-    width: Metrics.images.logo,
+    marginTop: Metrics.doubleSection,
     resizeMode: 'contain',
+    width: Metrics.images.logo,
   },
-  centered: {
+  launchScreen__centered: {
     alignItems: 'center',
   },
 })

@@ -33,9 +33,9 @@ class LaunchScreen extends Component {
           style={styles.backgroundImage}
           resizeMode="stretch"
         />
-        <ScrollView style={styles.container}>
-          <View style={styles.centered}>
-            <Image source={Images.logo} style={styles.logo} />
+        <ScrollView style={styles.launchScreen__container}>
+          <View style={styles.launchScreen__centered}>
+            <Image source={Images.logo} style={styles.launchScreen__logo} />
           </View>
 
           <View style={styles.section}>
