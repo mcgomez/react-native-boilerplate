@@ -62,17 +62,6 @@ export default class DeviceInfoScreen extends React.Component {
       'connectionChange',
       this.updateConnectionInfoHistory,
     )
-
-    // an example of how to display a custom Reactotron message
-    // console.tron.display({
-    //   name: 'SPECS',
-    //   value: {
-    //     hardware: fromPairs(map((o) => [o.title, o.info], HARDWARE_DATA)),
-    //     os: fromPairs(map((o) => [o.title, o.info], OS_DATA)),
-    //     app: fromPairs(map((o) => [o.title, o.info], APP_DATA))
-    //   },
-    //   preview: 'About this device...'
-    // })
   }
 
   componentWillUnmount() {

@@ -3,7 +3,7 @@ import { ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
 import PropTypes from 'prop-types'
 import { Images } from './DevTheme'
 import ButtonBox from './ButtonBox'
-import { StackNavigator } from 'react-navigation'
+import { createStackNavigator, createAppContainer } from 'react-navigation'
 // Screens
 import APITestingScreen from './APITestingScreen'
 import ComponentExamplesScreen from './ComponentExamplesScreen'
@@ -127,38 +127,40 @@ class PresentationScreen extends React.Component {
   }
 }
 
-export default StackNavigator(
-  {
-    PresentationScreen: { screen: PresentationScreen },
-    APITestingScreen: { screen: APITestingScreen },
-    ComponentExamplesScreen: { screen: ComponentExamplesScreen },
-    DeviceInfoScreen: { screen: DeviceInfoScreen },
-    PluginExamplesScreen: { screen: PluginExamplesScreen },
-    ThemeScreen: { screen: ThemeScreen },
-    FaqScreen: { screen: FaqScreen },
-  },
-  {
-    cardStyle: {
-      opacity: 1,
-      backgroundColor: '#3e243f',
+export default createAppContainer(
+  createStackNavigator(
+    {
+      PresentationScreen: { screen: PresentationScreen },
+      APITestingScreen: { screen: APITestingScreen },
+      ComponentExamplesScreen: { screen: ComponentExamplesScreen },
+      DeviceInfoScreen: { screen: DeviceInfoScreen },
+      PluginExamplesScreen: { screen: PluginExamplesScreen },
+      ThemeScreen: { screen: ThemeScreen },
+      FaqScreen: { screen: FaqScreen },
     },
-    initialRouteName: 'PresentationScreen',
-    headerMode: 'none',
-    // Keeping this here for future when we can make
-    navigationOptions: {
-      header: {
-        left: (
-          <TouchableOpacity onPress={() => window.alert('pop')}>
-            <Image
-              source={Images.closeButton}
-              style={{ marginHorizontal: 10 }}
-            />
-          </TouchableOpacity>
-        ),
-        style: {
-          backgroundColor: '#3e243f',
+    {
+      cardStyle: {
+        opacity: 1,
+        backgroundColor: '#3e243f',
+      },
+      initialRouteName: 'PresentationScreen',
+      headerMode: 'none',
+      // Keeping this here for future when we can make
+      navigationOptions: {
+        header: {
+          left: (
+            <TouchableOpacity onPress={() => window.alert('pop')}>
+              <Image
+                source={Images.closeButton}
+                style={{ marginHorizontal: 10 }}
+              />
+            </TouchableOpacity>
+          ),
+          style: {
+            backgroundColor: '#3e243f',
+          },
         },
       },
     },
-  },
+  ),
 )

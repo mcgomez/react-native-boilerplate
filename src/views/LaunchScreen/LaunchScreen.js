@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ScrollView, Image, View } from 'react-native'
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator, createAppContainer } from 'react-navigation'
 import PropTypes from 'prop-types'
 
 import { Images } from '../../themes'
@@ -48,14 +48,16 @@ class LaunchScreen extends Component {
   }
 }
 
-export default createStackNavigator(
-  {
-    LaunchScreen: { screen: LaunchScreen },
-    Register: { screen: Register },
-    SignIn: { screen: SignIn },
-  },
-  {
-    initialRouteName: 'LaunchScreen',
-    headerMode: 'none',
-  },
+export default createAppContainer(
+  createStackNavigator(
+    {
+      LaunchScreen: { screen: LaunchScreen },
+      Register: { screen: Register },
+      SignIn: { screen: SignIn },
+    },
+    {
+      initialRouteName: 'LaunchScreen',
+      headerMode: 'none',
+    },
+  ),
 )
